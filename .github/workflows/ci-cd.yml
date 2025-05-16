@@ -47,7 +47,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=home_power_backend
+            -Dsonar.projectKey=daessar_prueba_tecnica_devops_home_power_backend
             -Dsonar.organization=home-power-test
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
 
