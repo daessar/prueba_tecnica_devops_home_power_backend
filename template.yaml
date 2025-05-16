@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: API NestJS para listar clientes
+
+Globals:
+  Api:
+    BinaryMediaTypes:
+      - '*/*'
+    Cors:
+      AllowMethods: "'*'"
+      AllowHeaders: "'*'"
+      AllowOrigin: "'*'"
+
+Resources:
+  ClientsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./dist/lambda/
+      Handler: lambda.handler
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Timeout: 30
+      Environment:
+        Variables:
+          NODE_PATH: ./:/opt/node_modules
+      Events:
+        ApiRoot:
+          Type: Api
+          Properties:
+            Path: /
+            Method: ANY
+        ApiCatchAll:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+
+Outputs:
+  ClientsAPI:
+    Description: "API Gateway endpoint URL para la función Clients"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  ClientsFunction:
+    Description: "ARN de la función Lambda Clients"
+    Value: !GetAtt ClientsFunction.Arn
+  ClientsFunctionRole:
+    Description: "Role implícito IAM creado para la función Clients"
+    Value: !GetAtt ClientsFunctionRole.Arn
