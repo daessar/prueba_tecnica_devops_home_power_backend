@@ -32,4 +32,4 @@ describe('AppController', () => {
       expect(result.status).toBe('ok');
     });
   });
-}); 
+});

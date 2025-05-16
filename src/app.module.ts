@@ -22,4 +22,4 @@ export class AppController {
   imports: [ClientsModule],
   controllers: [AppController],
 })
-export class AppModule {} 
+export class AppModule {}

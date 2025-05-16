@@ -46,4 +46,4 @@ Outputs:
     Value: !GetAtt ClientsFunction.Arn
   ClientsFunctionRole:
     Description: "Role implícito IAM creado para la función Clients"
-    Value: !GetAtt ClientsFunctionRole.Arn 
+    Value: !GetAtt ClientsFunctionRole.Arn

@@ -56,7 +56,7 @@ describe('Lambda Handler', () => {
 
   it('should initialize server on first call', async () => {
     const response = await handler(mockEvent, mockContext, () => {});
-    
+
     expect(response).toBeDefined();
     expect(serverlessExpress.proxy).toHaveBeenCalledWith(
       expect.anything(),
@@ -65,4 +65,4 @@ describe('Lambda Handler', () => {
       'PROMISE'
     );
   });
-}); 
+});
