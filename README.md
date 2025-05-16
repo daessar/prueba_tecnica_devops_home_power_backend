@@ -2,6 +2,13 @@
 
 Este repositorio contiene una API NestJS desplegada en AWS Lambda y expuesta a través de API Gateway. La aplicación proporciona un endpoint para listar clientes.
 
+## Detalles de la prueba
+- Trunk base development como git branching lo cual consiste en tener una rama master principal y que todos los cambios lleguen por medio de un feature.
+- Arquitectura serveless desplegada con sam
+- Pruebas unitarias con jest.js
+- Sonarqube como herramienta para el codigo estatico
+- Terraform state en aws S3
+
 ## Estructura del Proyecto
 
 ```
@@ -72,7 +79,7 @@ Requisitos previos:
 npm run package
 
 # Desplegar con SAM
-npm run deploy
+sam deploy
 ```
 
 ## CI/CD
