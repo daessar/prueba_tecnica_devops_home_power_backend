@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: ['feature/*', 'main']
+    branches: ['feature/*', 'master']
   pull_request:
-    branches: ['main']
+    branches: ['master']
 
 jobs:
   backend-ci:
@@ -41,7 +41,7 @@ jobs:
         uses: pre-commit/action@v3.0.0
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
     needs: backend-ci  # Depende del job ci
     runs-on: ubuntu-latest
     # Solo se ejecuta en la rama main
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout code
