@@ -63,7 +63,7 @@ jobs:
     name: Continuous Deployment
     needs: backend-ci  # Depende del job ci
     runs-on: ubuntu-latest
-    # Solo se ejecuta en la rama main
+
     if: github.ref == 'refs/heads/master'
 
     steps:
