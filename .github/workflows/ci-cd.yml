@@ -10,8 +10,6 @@ jobs:
   backend-ci:
     name: Continuous Integration
     runs-on: ubuntu-latest
-    # Se ejecuta en cualquier rama, incluidas las ramas feature
-    if: startsWith(github.ref, 'refs/heads/')
 
     steps:
       - name: Checkout code
@@ -61,7 +59,7 @@ jobs:
 
   backend-cd:
     name: Continuous Deployment
-    needs: backend-ci  # Depende del job ci
+    needs: backend-ci
     runs-on: ubuntu-latest
 
     if: github.ref == 'refs/heads/master'

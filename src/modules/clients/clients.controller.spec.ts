@@ -5,7 +5,6 @@ import { NotFoundException } from '@nestjs/common';
 
 describe('ClientsController', () => {
   let controller: ClientsController;
-  let service: ClientsService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -14,7 +13,6 @@ describe('ClientsController', () => {
     }).compile();
 
     controller = module.get<ClientsController>(ClientsController);
-    service = module.get<ClientsService>(ClientsService);
   });
 
   it('should be defined', () => {
