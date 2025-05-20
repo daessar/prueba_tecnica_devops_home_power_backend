@@ -11,7 +11,7 @@ Sistema de gestión de clientes desarrollado con arquitectura serverless en AWS,
 ![Arquitectura](./images/arquitectura.png)
 
 ## Estrategia de git
-- Trunk base development como git branching lo cual consiste en tener una rama master principal y que todos los cambios lleguen por medio de un feature.
+- Trunk base development como git branching lo cual consiste en tener una rama master principal protegida y que todos los cambios lleguen por medio de un feature.
 ```yml
 on:
   push:
@@ -47,7 +47,7 @@ El proyecto utiliza GitHub Actions para integración y despliegue continuos:
   - Pre-commit hooks
   - Análisis estático con SonarQube
 
-- **CD**: Se ejecuta solo en la rama principal (main) y realiza:
+- **CD**: Se ejecuta solo en la rama principal (master) y realiza:
   - Empaquetado de la aplicación
   - Despliegue en AWS usando SAM
 
@@ -55,7 +55,7 @@ El proyecto utiliza GitHub Actions para integración y despliegue continuos:
 
 El proyecto implementa dos pipelines de CI/CD usando GitHub Actions:
 
-### Frontend Pipeline (frontend-deploy.yml)
+### Code Pipeline (frontend-deploy.yml)
 
 ### Condición ejecución:
 ```
@@ -114,6 +114,9 @@ backend "s3" {
 
 ## Analisis de codigo estatico
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=daessar_prueba_tecnica_devops_home_power_backend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=daessar_prueba_tecnica_devops_home_power_backend)
+
+## Analisis de costos
+[![infracost](https://img.shields.io/endpoint?url=https://dashboard.api.infracost.io/shields/json/9dd8a488-da82-43db-a070-7481b44db8aa/repos/8c752afc-90ea-4bd6-bab2-d3e9dbdea055/branch/071fa18d-50c6-4110-bfee-cc192c2c485a)](https://dashboard.infracost.io/org/homepowertest/repos/8c752afc-90ea-4bd6-bab2-d3e9dbdea055?tab=branches)
 
 
 ## Despliegue en AWS
