@@ -42,20 +42,6 @@ npm run test:watch
 npm run test:cov
 ```
 
-## Despliegue en AWS
-
-Requisitos previos:
-- AWS CLI configurado
-- AWS SAM CLI instalado
-
-```bash
-# Compilar y empaquetar la aplicación
-npm run package
-
-# Desplegar con SAM
-sam deploy
-```
-
 ## CI/CD - Backend
 
 El proyecto utiliza GitHub Actions para integración y despliegue continuos:
@@ -136,6 +122,20 @@ backend "s3" {
 ## Analisis de codigo estatico
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=daessar_prueba_tecnica_devops_home_power_backend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=daessar_prueba_tecnica_devops_home_power_backend)
 
+
+## Despliegue en AWS
+
+Requisitos previos:
+- AWS CLI configurado
+- AWS SAM CLI instalado
+
+```bash
+# Compilar y empaquetar la aplicación
+npm run package
+
+# Desplegar con SAM
+sam deploy
+```
 ## Tecnologías Utilizadas
 
 - NestJS: Framework de backend
