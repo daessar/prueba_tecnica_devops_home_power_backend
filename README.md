@@ -20,13 +20,6 @@ on:
     branches: ['master']
 ```
 
-- Arquitectura serveless desplegada con sam
-- Pruebas unitarias con jest.js
-- Sonarqube como herramienta para el codigo estatico
-- Terraform state en aws S3
-
-
-
 ## Pruebas Unitarias
 
 El proyecto incluye pruebas unitarias para los componentes principales con el framework jest.
